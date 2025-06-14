@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+select {
+  background: #252525 !important;
+}
+
+/* Target all nodes */
+[data-testid="node"] {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgba(30, 30, 30, 0.95) !important;
+  color: white !important;
+  border-radius: 8px;
+  border: 2px solid #444 !important;
+}
+
+/* Title bar */
+[data-testid="title"] {
+  background-color: transparent;
+  color: white !important;
+  font-weight: bold;
+  padding: 6px 12px;
+}
+[data-testid="input-title"] {
+  color: white !important;
+}
+
+
+[data-testid="minimap"] {
+  border-color: transparent !important;
+  background: transparent !important;
+  cursor: crosshair !important;
+}
+[data-testid="minimap-viewport"] {
+  border-color: white !important;
+  background: transparent !important;
+}
+[data-testid="minimap-node"] {
+  border-color: white !important;
+  background: white !important;
+}
+
+[data-testid="context-menu"] {
+  background: transparent !important;
+}
+[data-testid="context-menu-item"] {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #252525 !important;
+  border-color: #252525 !important;
+}
+[data-testid="context-menu-search-input"] {
+  color: #252525 !important;
+  border-color: #252525 !important;
+  border-radius: 1000px !important;
+}
+div:has(> [data-testid="context-menu-search-input"]) {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: #252525 !important;
+  padding: 8px !important;
+}
+
+
+/* Inputs and outputs */
+.input, .output, input div, .output div {
+  background-color: transparent;
+  color: white !important;
+}
+
+/* Socket divs based on their title */
+div[title="boolean"] { background-color: #C8E6C9 !important; }
+div[title="color"] { background-color: #FFB3BA !important; }
+div[title="color_matrix"] { background-color: #FFCDD2 !important; }
+div[title="convolute_matrix"] { background-color: #D1C4E9 !important; }
+div[title="image"] { background-color: #E1BEE7 !important; }
+div[title="number"] { background-color: #B3D9FF !important; }
+div[title="rgb_matrix"] { background-color: #FFB3E6 !important; }
+div[title="select"] { background-color: #FFDFBA !important; }
+div[title="string"] { background-color: #F5F5DC !important; }
+div[title="general_matrix"] { background-color: transparent !important; }
+
+.fill-area {
+  display: table;
+  z-index: -1;
+  position: absolute;
+  top: -320000px;
+  left: -320000px;
+  width: 640000px;
+  height: 640000px;
+}
+
+.background {
+  background-color: #252525;
+  opacity: 1;
+  background-image: radial-gradient(circle, #303030 3.2px, transparent 3.2px);
+  background-size: 80px 80px;
+  background-position: -3.2px -3.2px;
+}
+
