@@ -1,11 +1,21 @@
+import { ArrowLeft, ArrowLeftToLine, Home, X } from "lucide-react";
+import { info_store } from "./store";
+
 export default function InfoScreen() {
     return (
         <div className="absolute z-50 bg-[#242424] w-screen h-screen flex flex-col items-center">
-            <div className="text-3xl text-white pt-4 max-w-[800px] w-full">
-                Argonaut
-            </div>
-            <div className="italic max-w-[800px] pb-4 w-full text-white font-thin">
-                A node-based image editor for procedural workflows
+            <div className="max-w-[800px] w-full flex flex-row justify-between items-center">
+                <div>
+                    <div className="text-3xl text-white pt-4">
+                        Argonaut
+                    </div>
+                    <div className="italic pb-4 text-white font-thin">
+                        A node-based image editor for procedural workflows
+                    </div>
+                </div>
+                <div className="text-white cursor-pointer">
+                    <X onClick={() => info_store.getState().set_active(false)} />
+                </div>
             </div>
             <div className="text-gray-300 max-w-[800px] text-justify flex flex-col gap-4 p-4z">
                 <div>
@@ -19,10 +29,10 @@ export default function InfoScreen() {
                         Built by <a className="text-blue-500" target="_blank" href="https://www.github.com/davedude1011">Davedude101</a>
                     </div>
                     <div className="text-gray-400 text-xs italic text-end">
-                        v0.1 · MIT License · rete.js / fabric.js / konva
+                        v0.1 · <a className="underline" href="https://github.com/davedude1011/argonaut" target="_blank">Github</a> · MIT License · rete.js / fabric.js / konva
                     </div>
                 </div>
-            </div>           
+            </div>
         </div>
     )
 }
